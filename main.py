@@ -11,7 +11,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return "hello world"
+    return jsonify({"output": "hello world"})
 
 @app.route('/translate', methods=['POST'])
 def index():
@@ -24,4 +24,4 @@ def index():
     return jsonify({"output": text})
 
 # app.run(debug=True, port=os.getenv("PORT", default=5000))
-app.run(debug=True)
+# app.run(debug=True)
