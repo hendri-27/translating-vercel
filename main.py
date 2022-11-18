@@ -9,6 +9,10 @@ def translate(text,src="id",tgt="en"):
 
 app = Flask(__name__)
 
+@app.route('/')
+def home():
+    return "hello world"
+
 @app.route('/translate', methods=['POST'])
 def index():
     data = request.get_json()
@@ -20,5 +24,5 @@ def index():
     return jsonify({"output": text})
 
 
-if __name__ == '__main__':
-    app.run(debug=True, port=os.getenv("PORT", default=5000))
+# if __name__ == '__main__':
+#     app.run(debug=True, port=os.getenv("PORT", default=5000))
