@@ -23,7 +23,5 @@ def index():
         
     return jsonify({"output": text})
 
-
-
 # app.run(debug=True, port=os.getenv("PORT", default=5000))
-# app.run(debug=True)
+app.run(debug=True)
